@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Cards front
   cardsFront = [
     { name: 'one', img: 'img/1.jpg' },
     { name: 'one', img: 'img/1.jpg' },
@@ -24,10 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Global variables
   const board = document.querySelector('.board')
   let health = document.querySelector('.health')
+  let score = document.querySelector('.score')
+  let accuracy = document.querySelector('.accuracy')
+
   let collectedCards = [];
   let lostCards = [];
   let cardsNames = [];
   let cardsIds = [];
+  let allCards = [];
 
   // Set cards on the board
   const setCards = () => {
@@ -55,43 +60,47 @@ document.addEventListener('DOMContentLoaded', () => {
   function checkCards() {
     let cards = document.querySelectorAll('.card')
     if (cardsNames[0] !== cardsNames[1]) {
-      // lose
+      // Lose
       cards[cardsIds[0]].setAttribute('src', 'img/back.jpg')
       cards[cardsIds[1]].setAttribute('src', 'img/back.jpg')
       lostCards.push(cardsNames);
-
-
+      healthPoints();
     } else {
-      // win
+      // Win
       cards[cardsIds[0]].setAttribute('src', 'img/empty.jpg')
       cards[cardsIds[1]].setAttribute('src', 'img/empty.jpg')
       collectedCards.push(cardsNames);
-
-
     }
+
     // Health Points
+    function healthPoints() {
+      if (lostCards.length > 0) {
+        health.setAttribute('src', 'img/75.png')
+      }
+      if (lostCards.length > 1) {
+        health.setAttribute('src', 'img/50.png')
+      }
+      if (lostCards.length > 2) {
+        health.setAttribute('src', 'img/25.png')
+      }
+      if (lostCards.length > 3) {
+        health.setAttribute('src', 'img/0.png')
+        setTimeout(youLose, 400)
+      }
+      // You Lose
+      function youLose() {
+        alert('You Lose!')
+      }
 
-    if (lostCards.length > 0) {
-      health.setAttribute('src', 'img/75.png')
     }
-    if (lostCards.length > 1) {
-      health.setAttribute('src', 'img/50.png')
-    }
-    if (lostCards.length > 2) {
-      health.setAttribute('src', 'img/25.png')
-    }
-    if (lostCards.length > 3) {
-      health.setAttribute('src', 'img/0.png')
-      setTimeout(youLose, 400)
-    }
-    // You Lose
-    function youLose() {
-      alert('You Lose!')
-    }
+    // Score: 
+    score.textContent = collectedCards.length * 2;
+    // Accuracy
+    allCards.push(collectedCards)
+    allCards.push(lostCards)
+    accuracy.textContent = `${Math.ceil(collectedCards.length - lostCards.length) / lostCards.length * 100} %`;
 
-
-
-    console.log(lostCards)
+    console.log(allCards)
     cardsNames = [];
     cardsIds = [];
 
