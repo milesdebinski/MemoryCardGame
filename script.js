@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Lose
       cards[cardsIds[0]].setAttribute('src', 'img/back.jpg')
       cards[cardsIds[1]].setAttribute('src', 'img/back.jpg')
+      audioPick.play();
       lostCards.push(cardsNames);
       healthPoints();
     } else {
@@ -86,6 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
       audioFlip.play();
       cards[cardsIds[0]].setAttribute('src', 'img/empty.jpg')
       cards[cardsIds[1]].setAttribute('src', 'img/empty.jpg')
+      // prevent from fliping 'flipped' card
+      cards[cardsIds[0]].setAttribute('data-id', -1)
+      cards[cardsIds[1]].setAttribute('data-id', -1)
       collectedCards.push(cardsNames);
 
 
@@ -94,15 +98,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Health Points
     function healthPoints() {
       if (lostCards.length > 0) {
-        health.setAttribute('src', 'img/75.png')
+        health.setAttribute('src', 'img/125.png')
       }
       if (lostCards.length > 1) {
-        health.setAttribute('src', 'img/50.png')
+        health.setAttribute('src', 'img/100.png')
       }
       if (lostCards.length > 2) {
-        health.setAttribute('src', 'img/25.png')
+        health.setAttribute('src', 'img/75.png')
       }
       if (lostCards.length > 3) {
+        health.setAttribute('src', 'img/50.png')
+      }
+      if (lostCards.length > 4) {
+        health.setAttribute('src', 'img/25.png')
+      }
+      if (lostCards.length > 5) {
         health.setAttribute('src', 'img/0.png')
         setTimeout(youLose, 200)
       }
