@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  // Audio files
   let audio = new Audio('http://ccmixter.org/content/Beluga/Beluga_-_Midnight_Temple_(featuring_7OOP3D)_1.mp3');
 
 
 
   // Cards front
-  cardsFront = [
+  let cardsFront = [
     { name: 'one', img: 'img/1.jpg' },
     { name: 'one', img: 'img/1.jpg' },
     { name: 'two', img: 'img/2.jpg' },
@@ -23,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'eight', img: 'img/8.jpg' },
   ];
 
+  // Random cards
+  cardsFront.sort(() => 0.5 - Math.random())
 
 
   // Global variables
