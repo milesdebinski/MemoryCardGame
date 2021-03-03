@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Audio files
   let audio = new Audio('http://ccmixter.org/content/Beluga/Beluga_-_Midnight_Temple_(featuring_7OOP3D)_1.mp3');
+  let audioWin = new Audio('sound/win.wav');
+  let audioLose = new Audio('sound/lose.wav');
+  let audioPick = new Audio('sound/pick.wav');
+  let audioFlip = new Audio('sound/flip.wav');
+
 
 
 
@@ -34,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let health = document.querySelector('.health')
   let score = document.querySelector('.score')
   let accuracy = document.querySelector('.accuracy')
+  let tryagain = document.getElementById('tryagain')
 
   let collectedCards = [];
   let lostCards = [];
@@ -50,11 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
       card.setAttribute('data-id', i)
       card.addEventListener('click', flipCard)
       board.appendChild(card)
-      // audio.play();
+
     }
   }
   // Flip chosen card
   function flipCard() {
+    audioPick.play();
     let cardId = this.getAttribute('data-id')
     cardsNames.push(cardsFront[cardId].name)
     cardsIds.push(cardId);
@@ -76,9 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
       healthPoints();
     } else {
       // Win
+      audioFlip.play();
       cards[cardsIds[0]].setAttribute('src', 'img/empty.jpg')
       cards[cardsIds[1]].setAttribute('src', 'img/empty.jpg')
       collectedCards.push(cardsNames);
+
+
     }
 
     // Health Points
@@ -94,13 +104,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (lostCards.length > 3) {
         health.setAttribute('src', 'img/0.png')
-        setTimeout(youLose, 400)
+        setTimeout(youLose, 200)
       }
       // You Lose
       function youLose() {
-        alert('You Lose!')
+        audioLose.play();
+        tryagain.style.visibility = 'unset';
+
       }
 
+    }
+    console.log(collectedCards.length)
+    // Winning
+    if (collectedCards.length === 8) {
+      audioWin.play();
+      alert('You win!')
     }
     // Score: 
     score.textContent = collectedCards.length * 2;
@@ -109,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     allCards.push(lostCards)
     accuracy.textContent = `${((collectedCards.length * 2 / allCards.length * 100)).toFixed()}`;
 
-    console.log(allCards)
+
     cardsNames = [];
     cardsIds = [];
 
