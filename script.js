@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+  let audio = new Audio('http://ccmixter.org/content/Beluga/Beluga_-_Midnight_Temple_(featuring_7OOP3D)_1.mp3');
+  audio.play();
+
 
   // Cards front
   cardsFront = [
