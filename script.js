@@ -30,23 +30,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const setCards = () => {
     for (let i = 0; i < cardsFront.length; i++) {
       let card = document.createElement('img')
+      card.setAttribute('class', 'card')
       card.setAttribute('src', 'img/back.jpg')
       card.setAttribute('data-id', i)
       card.addEventListener('click', flipCard)
       board.appendChild(card)
-
     }
   }
-
   // Flip chosen card
   function flipCard() {
     let cardId = this.getAttribute('data-id')
     cardsNames.push(cardsFront[cardId].name)
     cardsIds.push(cardId);
     this.setAttribute('src', cardsFront[cardId].img)
-    console.log(cardId)
-  }
+    if (cardsNames.length == 2) {
+      setTimeout(checkCards, 200)
 
+    }
+  }
+  // Check chosen cards
+  function checkCards() {
+    let cards = document.querySelectorAll('.card')
+    if (cardsNames[0] !== cardsNames[1]) {
+      cards[cardsIds[0]].setAttribute('src', 'img/back.jpg')
+      cards[cardsIds[1]].setAttribute('src', 'img/back.jpg')
+    } else {
+      cards[cardsIds[0]].setAttribute('src', 'img/empty.jpg')
+      cards[cardsIds[1]].setAttribute('src', 'img/empty.jpg')
+    }
+    cardsNames = [];
+    cardsIds = [];
+  }
 
 
 
