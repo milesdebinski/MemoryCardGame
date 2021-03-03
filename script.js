@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   let audio = new Audio('http://ccmixter.org/content/Beluga/Beluga_-_Midnight_Temple_(featuring_7OOP3D)_1.mp3');
-  audio.play();
+
 
 
   // Cards front
@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.setAttribute('data-id', i)
       card.addEventListener('click', flipCard)
       board.appendChild(card)
+      // audio.play();
     }
   }
   // Flip chosen card
@@ -56,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     this.setAttribute('src', cardsFront[cardId].img)
     if (cardsNames.length == 2) {
       setTimeout(checkCards, 200)
+
 
     }
   }
@@ -101,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Accuracy
     allCards.push(collectedCards)
     allCards.push(lostCards)
-    accuracy.textContent = `${Math.ceil(collectedCards.length - lostCards.length) / lostCards.length * 100} %`;
+    accuracy.textContent = `${((collectedCards.length * 2 / allCards.length * 100)).toFixed()}`;
 
     console.log(allCards)
     cardsNames = [];
