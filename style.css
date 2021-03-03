@@ -52,7 +52,6 @@ ul {
 }
 
 /* Utility Classes */
-
 .container {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -70,7 +69,8 @@ ul {
   margin: 5px;
   max-width: 140px;
   font-weight: bold;
-  border: 1px solid #ddd;
+  border: 2px solid #777777;
+  border-radius: 2px;
 }
 
 /* Board */
@@ -81,16 +81,16 @@ ul {
   justify-content: center;
   grid-template-columns: 100px 100px 100px 100px;  
   grid-template-rows: 150px 150px 150px 150px;
-  grid-gap: .15rem;
-
-  
+  grid-gap: .20rem;
 }
 .board img {
   max-width: 100%;  
-  border: 1px #5f462c solid;
+  border: 10px #5f5f5f thick;
+  box-shadow: rgb(0, 0, 0, 0.8) 1px 1px;
+  border-radius: 15px;
 }
 .board img:hover {
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 
