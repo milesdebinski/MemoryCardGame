@@ -5,7 +5,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* Main Styling */
@@ -14,6 +14,7 @@ html, body {
   line-height: 1.6;
   color: #ddd;
   background: #ccc;
+  /* overflow: hidden; */
 }
 a {
   text-decoration: none;
@@ -31,6 +32,10 @@ ul {
   background: #333;
   padding: 0 30px;
   height: 50px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+ 
 }
 .hud .menu {
   display: flex;
@@ -46,24 +51,48 @@ ul {
   
 }
 
+/* Utility Classes */
+
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  max-width: 786px;
+  margin: auto;
+  padding: 2rem 2rem;
+  overflow: hidden;
+  
+}
+/* Score */
+.container .score li {
+  background: #333;
+  padding: 10px;
+  margin: 5px;
+  max-width: 140px;
+  font-weight: bold;
+  border: 1px solid #ddd;
+}
+
 /* Board */
 .board {
-  padding: 30px;
+  padding: 5px ;
   display: grid;
-  
   align-self: center;
   justify-content: center;
   grid-template-columns: 100px 100px 100px 100px;  
-  background: #ccc;
+  grid-template-rows: 150px 150px 150px 150px;
+  grid-gap: .15rem;
+
   
 }
 .board img {
-  max-width: 100%;
-  /* margin: 3px 3px; */
-  object-fit:cover;
-  border: 1px rgb(51, 24, 1) solid;
+  max-width: 100%;  
+  border: 1px #5f462c solid;
 }
 .board img:hover {
   opacity: 0.7;
 }
+
+
+
 

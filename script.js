@@ -47,6 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(cardId)
   }
 
+
+
+
+
+
   setCards();
 
 
