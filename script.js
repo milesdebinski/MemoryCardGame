@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Global variables
   const board = document.querySelector('.board')
+  let health = document.querySelector('.health')
+  let collectedCards = [];
+  let lostCards = [];
   let cardsNames = [];
   let cardsIds = [];
 
@@ -52,15 +55,48 @@ document.addEventListener('DOMContentLoaded', () => {
   function checkCards() {
     let cards = document.querySelectorAll('.card')
     if (cardsNames[0] !== cardsNames[1]) {
+      // lose
       cards[cardsIds[0]].setAttribute('src', 'img/back.jpg')
       cards[cardsIds[1]].setAttribute('src', 'img/back.jpg')
+      lostCards.push(cardsNames);
+
+
     } else {
+      // win
       cards[cardsIds[0]].setAttribute('src', 'img/empty.jpg')
       cards[cardsIds[1]].setAttribute('src', 'img/empty.jpg')
+      collectedCards.push(cardsNames);
+
+
     }
+    // Health Points
+
+    if (lostCards.length > 0) {
+      health.setAttribute('src', 'img/75.png')
+    }
+    if (lostCards.length > 1) {
+      health.setAttribute('src', 'img/50.png')
+    }
+    if (lostCards.length > 2) {
+      health.setAttribute('src', 'img/25.png')
+    }
+    if (lostCards.length > 3) {
+      health.setAttribute('src', 'img/0.png')
+      setTimeout(youLose, 400)
+    }
+    // You Lose
+    function youLose() {
+      alert('You Lose!')
+    }
+
+
+
+    console.log(lostCards)
     cardsNames = [];
     cardsIds = [];
+
   }
+
 
 
 

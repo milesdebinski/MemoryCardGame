@@ -23,6 +23,9 @@ a {
 ul {
   list-style: none;
 }
+img {
+  max-width: 100%;
+}
 
 /*  HUD */
 .hud {
@@ -63,7 +66,8 @@ ul {
   
 }
 /* Score */
-.container .score li {
+
+.container li.stats {
   background: #333;
   padding: 10px;
   margin: 5px;
@@ -72,6 +76,18 @@ ul {
   border: 2px solid #777777;
   border-radius: 2px;
 }
+.container li.hp {
+  padding: 10px;
+  margin: 5px;
+  max-width: 100px;
+  font-weight: bold;
+  border-radius: 2px;
+  /* border: 3px #000 solid; */
+}
+img.health {
+  justify-content: center;
+}
+
 
 /* Board */
 .board {
