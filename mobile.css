@@ -126,7 +126,7 @@ body {
   font-size: 12px;  
 }
 
-@media(max-width: 350px) {
+@media(max-width: 359px) {
 .container .statistics li.hp {
   max-width: 100%;
   width: 60px;
@@ -183,11 +183,29 @@ body {
 .thankyou {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 200px;
+  grid-template-rows: 1fr 160px;
   justify-content: center;
   align-items: center;
   grid-gap: 5px;
   color: #2e1905;
   /* border: 1px red solid; */
+}
+.hud {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: #bd823a;
+  padding: 0px 20px;
+  height: 60px;
+  /* position: sticky; */
+  top: 0;
+  z-index: 2;
+}
+.hud h1 {
+  font-size: 15px;
+}
+.hud a {
+  font-size: 12px;
 }
 }
