@@ -126,6 +126,43 @@ body {
   font-size: 12px;  
 }
 
+.tryagain a {
+  position: relative;
+  align-items: center;
+  background: #310101; 
+  font-weight: bold;
+  font-size: 15px;
+}
+.tryagain p {
+  font-size: 30px;
+  font-weight: bold;
+}
+.youwin a {
+  position: relative;
+  align-items: center;
+  background: #310101; 
+  font-weight: bold;
+  font-size: 15px;
+}
+.youwin p {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media(max-width: 359px) {
 .container .statistics li.hp {
   max-width: 100%;
