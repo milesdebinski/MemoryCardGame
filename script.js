@@ -37,8 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Global variables
   const board = document.querySelector('.board')
   let health = document.querySelector('.health')
-  let score = document.querySelector('.score')
-  let accuracy = document.querySelector('.accuracy')
+  let health1 = document.querySelector('.health1')
+  let health2 = document.querySelector('.health2')
+  let score = document.querySelector('.sco')
+  let accuracy = document.querySelector('.acc')
   let tryagain = document.getElementById('tryagain')
 
   let collectedCards = [];
@@ -97,23 +99,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Health Points
     function healthPoints() {
+
       if (lostCards.length > 0) {
-        health.setAttribute('src', 'img/125.png')
-      }
-      if (lostCards.length > 1) {
-        health.setAttribute('src', 'img/100.png')
-      }
-      if (lostCards.length > 2) {
         health.setAttribute('src', 'img/75.png')
       }
-      if (lostCards.length > 3) {
+      if (lostCards.length > 1) {
         health.setAttribute('src', 'img/50.png')
       }
-      if (lostCards.length > 4) {
+      if (lostCards.length > 2) {
         health.setAttribute('src', 'img/25.png')
       }
-      if (lostCards.length > 5) {
+      if (lostCards.length > 3) {
         health.setAttribute('src', 'img/0.png')
+      }
+      if (lostCards.length > 4) {
+        health1.setAttribute('src', 'img/75.png')
+      }
+      if (lostCards.length > 5) {
+        health1.setAttribute('src', 'img/50.png')
+      }
+      if (lostCards.length > 6) {
+        health1.setAttribute('src', 'img/25.png')
+      }
+      if (lostCards.length > 7) {
+        health1.setAttribute('src', 'img/0.png')
+      }
+      if (lostCards.length > 8) {
+        health2.setAttribute('src', 'img/75.png')
+      }
+      if (lostCards.length > 9) {
+        health2.setAttribute('src', 'img/50.png')
+      }
+      if (lostCards.length > 10) {
+        health2.setAttribute('src', 'img/25.png')
+      }
+      if (lostCards.length > 11) {
+        health2.setAttribute('src', 'img/0.png')
         setTimeout(youLose, 200)
       }
       // You Lose

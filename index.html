@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" media="screen and (max-width: 768px)" href="mobile.css">
   <script src="script.js"></script>
   <title>Memory Card Game</title>
 </head>
@@ -19,15 +20,20 @@
     </ul>
   </div>
   <div class="container">
-    <div class="statistics">
-      <ul>
-        <li class="hp"><img class="health" src="img/150.png"> </li>
-        <li class="stats">Score: <span class="score">0</span>/16 </li>
-        <li class="stats">Accuracy: <span class="accuracy">0</span> % </li>
-        <a href="" class="reset">RESET</a>
-      </ul>
-    </div>
+    <ul class="statistics">
+
+      <li class="hp"><img class="health2" src="img/100.png"> </li>
+      <li class="hp"><img class="health1" src="img/100.png"> </li>
+      <li class="hp"><img class="health" src="img/100.png"> </li>
+      <li class="stats score">Score: <span class="sco">0</span>/16 </li>
+      <li class="stats accuracy">Accuracy: <span class="acc">0</span> % </li>
+      <a href="" class="reset">RESET</a>
+
+    </ul>
     <div class="board">
+
+
+
 
     </div>
 
@@ -35,11 +41,9 @@
   <div id="tryagain" class="tryagain">
     <a href="index.html" class="btn youlose">Try again!</a>
   </div>
-
-
-
-
-
+  <footer class="footer">
+    <p>Copyright &copy; 2021 All Rights Reserved</p>
+  </footer>
 
 
 </body>
