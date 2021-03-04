@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let score = document.querySelector('.sco')
   let accuracy = document.querySelector('.acc')
   let tryagain = document.getElementById('tryagain')
+  let youwin = document.getElementById('youwin')
 
   let collectedCards = [];
   let lostCards = [];
@@ -149,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Winning
     if (collectedCards.length === 8) {
       audioWin.play();
-      alert('You win!')
+      youwin.style.visibility = 'unset';
     }
     // Score: 
     score.textContent = collectedCards.length * 2;
