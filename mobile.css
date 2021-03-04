@@ -88,7 +88,7 @@ body {
   grid-template-rows: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
-  grid-gap: 25px;
+  grid-gap: 5px;
   color: #2e1905;
   /* border: 1px red solid; */
 }
@@ -101,12 +101,14 @@ body {
   order: 0;
   grid-row: 1 / span 1;
   grid-column: 2;
+  font-size: 30px;
  
 }
 .thankyou p {
   order: 1;
   grid-row: 2;
   grid-column: 1/ span 2;
+  font-size: 17px;
  
 }
 
@@ -121,13 +123,71 @@ body {
   font-weight: bold;
   position: absolute;
   width: 100%;
-  font-size: 12px;
-  
+  font-size: 12px;  
 }
 
+@media(max-width: 321px) {
+.container .statistics li.hp {
+  max-width: 100%;
+  width: 60px;
+  /* object-fit: cover; */
+  margin-bottom: 5px;
+  padding: 0px;
+  top: 0;
+  justify-self:center;
+  /* margin-bottom: 40px; */
+}
+.container {
+  padding: 8px;
+  
 
+}
 
-
-
-
-/* @media(max-width: 600px) */
+.container .statistics li.hp {
+  max-width: 100%;
+  width: 30px;
+  /* object-fit: cover; */
+  margin-bottom: 5px;
+  padding: 0px;
+  top: 0;
+  justify-self:center;
+  align-self: start;
+  /* margin-bottom: 40px; */
+}
+.container .statistics {
+  grid-gap: 0.1rem;
+  grid-template-rows: 30px 1fr;
+  
+  /* align-self: center; */
+}
+.board {
+  padding: 5px ;
+  display: grid;
+  align-self: start;
+  justify-content: center;
+  grid-template-columns: repeat(4, 65px);  
+  grid-template-rows: repeat(4, 65fr);
+  grid-gap: 0.3rem;
+}
+.thankyou p {
+  order: 1;
+  grid-row: 2;
+  grid-column: 1/ span 2;
+  font-size: 14px;
+  /* margin-bottom: 10px; */
+}
+.thankyou h1 {
+  font-size: 22px;
+ 
+}
+.thankyou {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 200px;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 5px;
+  color: #2e1905;
+  /* border: 1px red solid; */
+}
+}
