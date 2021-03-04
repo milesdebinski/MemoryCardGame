@@ -126,7 +126,7 @@ body {
   font-size: 12px;  
 }
 
-@media(max-width: 321px) {
+@media(max-width: 350px) {
 .container .statistics li.hp {
   max-width: 100%;
   width: 60px;
