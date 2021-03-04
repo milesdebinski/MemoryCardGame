@@ -32,8 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Random cards
   cardsFront.sort(() => 0.5 - Math.random())
-  audio.play();
-  audio.volume = 0.2;
+
 
   // Global variables
   const board = document.querySelector('.board')
@@ -65,6 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // Flip chosen card
   function flipCard() {
+    audio.play();
+    audio.volume = 0.2;
     audioPick.play();
     let cardId = this.getAttribute('data-id')
     cardsNames.push(cardsFront[cardId].name)
