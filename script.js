@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // Audio files
-  let audio = new Audio('http://ccmixter.org/content/NiGiD/NiGiD_-_Lockdown_Charms.mp3');
+  let audio = new Audio('sound/background.mp3');
   let audioWin = new Audio('sound/win.wav');
   let audioLose = new Audio('sound/lose.wav');
   let audioPick = new Audio('sound/pick.wav');
