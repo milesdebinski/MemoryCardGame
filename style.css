@@ -31,9 +31,11 @@ img {
 }
 
 /*  HUD */
+
 .hud {
+  
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background: #bd823a;
   padding: 0 30px;
@@ -42,6 +44,7 @@ img {
   top: 0;
   z-index: 2;
 }
+
 .hud .menu {
   display: flex;
   justify-content: space-around;
