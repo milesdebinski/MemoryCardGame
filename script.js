@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // Audio files
-  let audio = new Audio('http://ccmixter.org/content/Beluga/Beluga_-_Midnight_Temple_(featuring_7OOP3D)_1.mp3');
+  let audio = new Audio('http://ccmixter.org/content/NiGiD/NiGiD_-_Lockdown_Charms.mp3');
   let audioWin = new Audio('sound/win.wav');
   let audioLose = new Audio('sound/lose.wav');
   let audioPick = new Audio('sound/pick.wav');
@@ -32,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Random cards
   cardsFront.sort(() => 0.5 - Math.random())
-
+  audio.play();
+  audio.volume = 0.2;
 
   // Global variables
   const board = document.querySelector('.board')
