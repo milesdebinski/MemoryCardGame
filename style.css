@@ -89,7 +89,7 @@ img {
   grid-template-rows: repeat(4, 80px);
   align-items: flex-start;
   justify-content: center;
-  /* border: 1px red solid; */
+  
   grid-gap: 0.2rem;
   
 }

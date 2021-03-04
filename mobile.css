@@ -28,7 +28,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(1, 1fr);
-  border: 1px solid red;
+  
   max-width: 600px;
 }
 .statistics a.reset {
