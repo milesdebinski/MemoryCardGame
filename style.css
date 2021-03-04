@@ -55,15 +55,7 @@ img {
 }
 
 /* Utility Classes */
-.container {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  align-items: center;
-  max-width: 786px;
-  margin: auto;
-  padding: 2rem 2rem;
-  overflow: hidden;
-}
+
 .btn {
   background: #333;
   padding: 10px 30px;
@@ -77,9 +69,33 @@ img {
   padding: 10px 30px;
   border-radius: 5px;
 }
+
+/* Stats + Boards grid  */
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  max-width: 786px;
+  margin: auto;
+  padding: 2rem 2rem;
+  overflow: hidden;
+}
 /* Score */
+.container .statistics {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  
+}
+.container .statistics li.hp {
+  max-width: 100px;
+  
+  margin-left: 23px;
+}
 
 .container li.stats {
+  align-self: flex-end;
   background: #333;
   padding: 10px;
   margin: 5px;
@@ -89,11 +105,9 @@ img {
   border-radius: 5px;
   text-align: center;
 }
+
 .container li.stats:hover {
-  cursor:default;
-}
-.container li.hp {
-  max-width: 100px;
+  cursor: default;
 }
 
 

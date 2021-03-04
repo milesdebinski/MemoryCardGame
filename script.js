@@ -12,22 +12,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Cards front
   let cardsFront = [
-    { name: 'one', img: 'img/1.jpg' },
-    { name: 'one', img: 'img/1.jpg' },
-    { name: 'two', img: 'img/2.jpg' },
-    { name: 'two', img: 'img/2.jpg' },
-    { name: 'three', img: 'img/3.jpg' },
-    { name: 'three', img: 'img/3.jpg' },
-    { name: 'four', img: 'img/4.jpg' },
-    { name: 'four', img: 'img/4.jpg' },
-    { name: 'five', img: 'img/5.jpg' },
-    { name: 'five', img: 'img/5.jpg' },
-    { name: 'six', img: 'img/6.jpg' },
-    { name: 'six', img: 'img/6.jpg' },
-    { name: 'seven', img: 'img/7.jpg' },
-    { name: 'seven', img: 'img/7.jpg' },
-    { name: 'eight', img: 'img/8.jpg' },
-    { name: 'eight', img: 'img/8.jpg' },
+    { name: 'one', img: 'img/1.png' },
+    { name: 'one', img: 'img/1.png' },
+    { name: 'two', img: 'img/2.png' },
+    { name: 'two', img: 'img/2.png' },
+    { name: 'three', img: 'img/3.png' },
+    { name: 'three', img: 'img/3.png' },
+    { name: 'four', img: 'img/4.png' },
+    { name: 'four', img: 'img/4.png' },
+    { name: 'five', img: 'img/5.png' },
+    { name: 'five', img: 'img/5.png' },
+    { name: 'six', img: 'img/6.png' },
+    { name: 'six', img: 'img/6.png' },
+    { name: 'seven', img: 'img/7.png' },
+    { name: 'seven', img: 'img/7.png' },
+    { name: 'eight', img: 'img/8.png' },
+    { name: 'eight', img: 'img/8.png' },
   ];
 
   // Random cards
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < cardsFront.length; i++) {
       let card = document.createElement('img')
       card.setAttribute('class', 'card')
-      card.setAttribute('src', 'img/back.jpg')
+      card.setAttribute('src', 'img/back.png')
       card.setAttribute('data-id', i)
       card.addEventListener('click', flipCard)
       board.appendChild(card)
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cardsIds.push(cardId);
     this.setAttribute('src', cardsFront[cardId].img)
     if (cardsNames.length == 2) {
-      setTimeout(checkCards, 200)
+      setTimeout(checkCards, 350)
 
 
     }
@@ -77,16 +77,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let cards = document.querySelectorAll('.card')
     if (cardsNames[0] !== cardsNames[1]) {
       // Lose
-      cards[cardsIds[0]].setAttribute('src', 'img/back.jpg')
-      cards[cardsIds[1]].setAttribute('src', 'img/back.jpg')
+      cards[cardsIds[0]].setAttribute('src', 'img/back.png')
+      cards[cardsIds[1]].setAttribute('src', 'img/back.png')
       audioPick.play();
       lostCards.push(cardsNames);
       healthPoints();
     } else {
       // Win
       audioFlip.play();
-      cards[cardsIds[0]].setAttribute('src', 'img/empty.jpg')
-      cards[cardsIds[1]].setAttribute('src', 'img/empty.jpg')
+      cards[cardsIds[0]].setAttribute('src', 'img/empty.png')
+      cards[cardsIds[1]].setAttribute('src', 'img/empty.png')
       // prevent from fliping 'flipped' card
       cards[cardsIds[0]].setAttribute('data-id', -1)
       cards[cardsIds[1]].setAttribute('data-id', -1)
